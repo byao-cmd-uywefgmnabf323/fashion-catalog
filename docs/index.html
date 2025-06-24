@@ -49,22 +49,29 @@
             
             try {
                 // Fetch fashion catalog data
-                const response = await fetch('fashion_catalog.txt');
+                const response = await fetch('https://raw.githubusercontent.com/byao-cmd-uywefgmnabf323/fashion-catalog/main/fashion_catalog.txt');
                 const text = await response.text();
                 
                 // Parse the catalog
-                const rows = text.trim().split('\n').slice(1);
                 const catalog = {
                     shoes: [],
                     pants: [],
                     shirts: []
                 };
                 
-                rows.forEach(row => {
+                // Split text into rows and skip header
+                const rows = text.trim().split('\n');
+                const headers = rows[0].split('\t');
+                const dataRows = rows.slice(1);
+                
+                dataRows.forEach(row => {
                     const [_, piece, brand] = row.split('\t');
+                    if (!piece || !brand) return;
+                    
                     const lowerPiece = piece.toLowerCase();
                     
-                    if (lowerPiece.includes('shoe') || lowerPiece.includes('boot') || lowerPiece.includes('loafer')) {
+                    if (lowerPiece.includes('shoe') || lowerPiece.includes('boot') || 
+                      lowerPiece.includes('loafer')) {
                         catalog.shoes.push({ piece, brand });
                     } else if (lowerPiece.includes('pants') || lowerPiece.includes('shorts') || 
                               lowerPiece.includes('trousers') || lowerPiece.includes('skirt')) {
@@ -74,6 +81,11 @@
                         catalog.shirts.push({ piece, brand });
                     }
                 });
+                
+                // Check if we have items in each category
+                if (!catalog.shoes.length || !catalog.pants.length || !catalog.shirts.length) {
+                    throw new Error('Could not parse fashion catalog data');
+                }
                 
                 // Generate expensive combinations
                 const combinations = [];
