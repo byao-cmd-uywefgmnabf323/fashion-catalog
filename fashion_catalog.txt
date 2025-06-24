@@ -1,0 +1,51 @@
+Name	Fashion Piece	Brand
+Accessories - Silver Chain	Silver Chain	Yohji Yamamoto
+Outerwear - Bomber Jacket	Bomber Jacket	A-COLD-WALL*
+Bottoms - Leather Shorts	Leather Shorts	A-COLD-WALL*
+Outerwear - Bomber Jacket	Bomber Jacket	Balenciaga
+Accessories - Bucket Hat	Bucket Hat	A-COLD-WALL*
+Tops - Graphic Tee	Graphic Tee	Uniqlo
+Tops - Silk Blouse	Silk Blouse	Balenciaga
+Outerwear - Trench Coat	Trench Coat	Off-White
+Footwear - Slides	Slides	COS
+Outerwear - Puffer Coat	Puffer Coat	COS
+Footwear - Chelsea Boots	Chelsea Boots	Balenciaga
+Footwear - Slides	Slides	Balenciaga
+Footwear - Loafers	Loafers	A-COLD-WALL*
+Accessories - Crossbody Bag	Crossbody Bag	Uniqlo
+Accessories - Bucket Hat	Bucket Hat	Acne Studios
+Bottoms - Cargo Pants	Cargo Pants	Rick Owens
+Footwear - Combat Boots	Combat Boots	Uniqlo
+Tops - Knitted Sweater	Knitted Sweater	Zara
+Bottoms - Pleated Skirt	Pleated Skirt	Rick Owens
+Accessories - Crossbody Bag	Crossbody Bag	Uniqlo
+Accessories - Crossbody Bag	Crossbody Bag	Prada
+Bottoms - Tailored Trousers	Tailored Trousers	Off-White
+Footwear - Loafers	Loafers	COS
+Outerwear - Denim Jacket	Denim Jacket	COS
+Bottoms - Tailored Trousers	Tailored Trousers	Prada
+Accessories - Sunglasses	Sunglasses	Balenciaga
+Footwear - Slides	Slides	Zara
+Bottoms - Cargo Pants	Cargo Pants	Uniqlo
+Footwear - Combat Boots	Combat Boots	Uniqlo
+Outerwear - Puffer Coat	Puffer Coat	Yohji Yamamoto
+Footwear - Loafers	Loafers	Uniqlo
+Outerwear - Puffer Coat	Puffer Coat	Prada
+Outerwear - Puffer Coat	Puffer Coat	Balenciaga
+Outerwear - Trench Coat	Trench Coat	Off-White
+Bottoms - Leather Shorts	Leather Shorts	A-COLD-WALL*
+Bottoms - Pleated Skirt	Pleated Skirt	Rick Owens
+Footwear - Loafers	Loafers	A-COLD-WALL*
+Outerwear - Puffer Coat	Puffer Coat	Off-White
+Tops - Silk Blouse	Silk Blouse	Prada
+Outerwear - Trench Coat	Trench Coat	Zara
+Accessories - Sunglasses	Sunglasses	Rick Owens
+Tops - Crop Top	Crop Top	A-COLD-WALL*
+Accessories - Leather Belt	Leather Belt	COS
+Bottoms - Cargo Pants	Cargo Pants	Rick Owens
+Footwear - Loafers	Loafers	Off-White
+Outerwear - Trench Coat	Trench Coat	COS
+Bottoms - Cargo Pants	Cargo Pants	COS
+Accessories - Sunglasses	Sunglasses	Prada
+Footwear - Chelsea Boots	Chelsea Boots	Yohji Yamamoto
+Bottoms - Cargo Pants	Cargo Pants	Prada
