@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fashion Generator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <style>
+        .outfit-card {
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .generate-btn {
+            margin: 20px 0;
+        }
+        .loading {
+            display: none;
+        }
+        .error {
+            color: #dc3545;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <h1 class="text-center mb-4">Fashion Generator</h1>
+        <div class="text-center">
+            <button class="btn btn-primary btn-lg generate-btn" onclick="generateOutfit()">Generate Outfit</button>
+            <div class="loading">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+        <div id="outfits" class="row"></div>
+        <div id="error" class="error"></div>
+    </div>
+    <script>
+        async function generateOutfit() {
+            const generateBtn = document.querySelector('.generate-btn');
+            const loading = document.querySelector('.loading');
+            const errorDiv = document.getElementById('error');
+            const outfitsDiv = document.getElementById('outfits');
+            
+            // Show loading, hide button
+            generateBtn.style.display = 'none';
+            loading.style.display = 'inline-block';
+            errorDiv.textContent = '';
+            outfitsDiv.innerHTML = '';
+            
+            try {
+                // Fetch fashion catalog data
+                const response = await fetch('fashion_catalog.txt');
+                const text = await response.text();
+                
+                // Parse the catalog
+                const rows = text.trim().split('\n').slice(1);
+                const catalog = {
+                    shoes: [],
+                    pants: [],
+                    shirts: []
+                };
+                
+                rows.forEach(row => {
+                    const [_, piece, brand] = row.split('\t');
+                    const lowerPiece = piece.toLowerCase();
+                    
+                    if (lowerPiece.includes('shoe') || lowerPiece.includes('boot') || lowerPiece.includes('loafer')) {
+                        catalog.shoes.push({ piece, brand });
+                    } else if (lowerPiece.includes('pants') || lowerPiece.includes('shorts') || 
+                              lowerPiece.includes('trousers') || lowerPiece.includes('skirt')) {
+                        catalog.pants.push({ piece, brand });
+                    } else if (lowerPiece.includes('shirt') || lowerPiece.includes('blouse') || 
+                              lowerPiece.includes('sweater') || lowerPiece.includes('top')) {
+                        catalog.shirts.push({ piece, brand });
+                    }
+                });
+                
+                // Generate expensive combinations
+                const combinations = [];
+                for (let i = 0; i < 10; i++) {
+                    const shoe = catalog.shoes[Math.floor(Math.random() * catalog.shoes.length)];
+                    const pants = catalog.pants[Math.floor(Math.random() * catalog.pants.length)];
+                    const shirt = catalog.shirts[Math.floor(Math.random() * catalog.shirts.length)];
+                    
+                    const outfit = `Bowen should wear ${shoe.piece.toLowerCase()} from ${shoe.brand}, 
+                                  ${pants.piece.toLowerCase()} from ${pants.brand}, and 
+                                  ${shirt.piece.toLowerCase()} from ${shirt.brand}`;
+                    combinations.push(outfit);
+                }
+                
+                // Display results
+                combinations.forEach((outfit, index) => {
+                    const outfitCard = document.createElement('div');
+                    outfitCard.className = 'col-md-6 mb-4';
+                    outfitCard.innerHTML = `
+                        <div class="card outfit-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Outfit ${index + 1}</h5>
+                                <p class="card-text">${outfit}</p>
+                            </div>
+                        </div>
+                    `;
+                    outfitsDiv.appendChild(outfitCard);
+                });
+                
+            } catch (error) {
+                console.error('Error:', error);
+                errorDiv.textContent = 'Error generating outfit. Please try again.';
+            } finally {
+                // Hide loading, show button
+                generateBtn.style.display = 'inline-block';
+                loading.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
