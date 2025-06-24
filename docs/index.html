@@ -38,22 +38,27 @@
         }
 
         .generate-btn {
-            background-color: #0071e3;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             color: white;
-            border: none;
-            padding: 12px 32px;
-            font-size: 18px;
-            font-weight: 500;
-            border-radius: 8px;
+            border-radius: 16px;
+            padding: 20px 40px;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
             cursor: pointer;
-            transition: all 0.2s ease;
-            margin: 24px auto;
+            transition: all 0.3s ease;
+            margin: 16px auto 8px;
             display: inline-block;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .generate-btn:hover {
-            background-color: #0052cc;
             transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
         }
 
         .outfits-grid {
@@ -64,29 +69,34 @@
         }
 
         .outfit-card {
-            background-color: white;
-            padding: 24px;
-            border-radius: 16px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: all 0.2s ease;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            font-family: 'Times New Roman', serif;
         }
 
         .outfit-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.2);
         }
 
         .outfit-card h3 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 16px;
-            color: #1d1d1f;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: white;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
         }
 
         .outfit-card p {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #666;
+            font-size: 18px;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
         }
 
         .loading {
